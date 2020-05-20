@@ -1,0 +1,70 @@
+.input-range__track--active {
+    background: #2874f0;
+}
+
+.input-range__slider {
+    background: #fff;
+    border-color: #2874f0;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-left: -0.4rem;
+}
+.input-range__track--background {
+    background: #89a0ee;
+}
+.button-filter {
+    padding: 9px 25px;
+    outline: none;
+    border-radius: 26px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #4269ea;
+    color: #fff;
+}
+
+.input-range {
+    margin-top: 66px;
+}
+
+.filter-header {
+    float: left;
+    margin-top: 10px;
+}
+.mobile-button-filter-container {
+    position: relative;
+    margin-top: 23px;
+    bottom: 0;
+    width: 100%;
+    display: none;
+}
+.mobile-button-filter-apply {
+    border-right: 1px solid #ccc;
+}
+
+.mobile-button-filter-apply,
+.mobile-button-filter-cancel {
+    width: 50%;
+    padding: 19px;
+    background: transparent;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile-button-filter-container {
+        display: flex;
+    }
+    .desktop-button-filter-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .mobile-button-filter-container {
+        display: flex;
+    }
+    .desktop-button-filter-container {
+        display: none;
+    }
+}
