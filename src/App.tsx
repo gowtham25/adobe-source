@@ -58,13 +58,27 @@ function App() {
     }, [sortBy, handleFilter, searchQuery]);
 
     const handleAddCart = (payload: any) => {
-        const addItem = [...addCartData, { ...payload, count: 1 }];
-        setAddCardData(addItem);
+        let newItem = true;
+        const { name = "" } = payload || {};
+        const newData = addCartData.map((aValue: any) => {
+            if (name === aValue.name) {
+                newItem = false;
+                return { ...aValue, count: aValue.count + 1 };
+            }
+            return aValue;
+        });
+        if (newItem) {
+            const addItem = [...addCartData, { ...payload, count: 1 }];
+            setAddCardData(addItem);
+        } else {
+            setAddCardData(newData);
+        }
     };
 
     const handleSearch = () => {
         console.log(searchQuery);
     };
+
     return (
         <div className="App">
             {showFilterModal && (
@@ -92,7 +106,9 @@ function App() {
                         searchQuery={searchQuery}
                         handleSearch={handleSearch}
                         showHome={showHome}
-                        cartIem={addCartData.length}
+                        cartIem={addCartData.reduce((a: number, b: any) => {
+                            return a + b.count;
+                        }, 0)}
                     />
                 </div>
             </div>
